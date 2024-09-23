@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="397dp"
+        android:layout_height="628dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tag9" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="198dp"
@@ -30,19 +40,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="397dp"
-        android:layout_height="628dp"
-        app:srcCompat="@drawable/tag9"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="138dp" />
-
     <Button
         android:id="@+id/button4"
         android:layout_width="265dp"
         android:layout_height="49dp"
         android:layout_marginTop="576dp"
+        android:backgroundTint="#B3B3B3"
+        android:shadowColor="#000000"
         android:text="Next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
