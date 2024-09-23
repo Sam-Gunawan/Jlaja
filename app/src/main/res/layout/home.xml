@@ -56,7 +56,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
         android:text="Past Jlaja"
         android:textColor="@color/black"
@@ -203,6 +203,8 @@
                         android:id="@+id/pastImageView1"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
+                        android:src="@drawable/_3d05da0_19c1_48f8_ac0d_9a57498a4697"
+                        tools:src="@drawable/_3d05da0_19c1_48f8_ac0d_9a57498a4697"
                         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
                     <TextView
@@ -241,6 +243,7 @@
                         android:id="@+id/ipastImageView2"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
+                        android:src="@drawable/_3d05da0_19c1_48f8_ac0d_9a57498a4697"
                         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
                     <TextView
@@ -279,6 +282,7 @@
                         android:id="@+id/pastImageView3"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
+                        android:src="@drawable/_3d05da0_19c1_48f8_ac0d_9a57498a4697"
                         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
                     <TextView
@@ -301,9 +305,10 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="413dp"
-        android:layout_height="70dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -327,7 +332,8 @@
                         android:id="@+id/navImageButton1"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="#00FFFFFF"
+                        android:background="#00DB3939"
+                        android:tint="@color/black"
                         app:srcCompat="@drawable/baseline_keyboard_arrow_down_24" />
 
                     <TextView
@@ -449,6 +455,6 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
