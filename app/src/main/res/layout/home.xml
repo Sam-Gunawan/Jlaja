@@ -35,6 +35,8 @@
         android:layout_height="42dp"
         android:layout_marginStart="203dp"
         android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:onClick="logOut"
         android:src="@drawable/baseline_self_improvement_24"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent" />
