@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Bill Name Input -->
+    <TextView
+        android:id="@+id/bill_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bill Name"
+        android:textSize="16sp"
+        android:paddingBottom="4dp" />
+
+    <EditText
+        android:id="@+id/bill_name_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter bill name"
+        android:inputType="text" />
+
+    <!-- Bill Amount Input -->
+    <TextView
+        android:id="@+id/bill_amount_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bill Amount"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="4dp" />
+
+    <EditText
+        android:id="@+id/bill_amount_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter bill amount"
+        android:inputType="numberDecimal" />
+
+    <!-- Paid By Section (who paid) -->
+    <TextView
+        android:id="@+id/paid_by_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paid By"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="4dp" />
+
+    <Spinner
+        android:id="@+id/paid_by_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown" />
+
+    <!-- Split Between Section -->
+    <TextView
+        android:id="@+id/split_between_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Split Between"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="4dp" />
+
+    <!-- RecyclerView for Members to Split the Bill Between -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/members_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
+
+    <!-- Save Bill Button -->
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD MEMBERS" />
+
+    <Button
+        android:id="@+id/save_bill_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:text="Save Bill"
+        android:textSize="16sp" />
+
+</LinearLayout>
