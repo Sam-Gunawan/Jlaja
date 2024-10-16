@@ -1,35 +1,15 @@
 package com.example.jlaja
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.jlaja.ui.theme.JlajaTheme
-
-import com.example.jlaja.TripDetailsActivity
-import com.example.jlaja.BillsAdapter
-import com.example.jlaja.AddBillActivity
-import com.example.jlaja.MembersAdapter
 
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var tripButtonContainer: LinearLayout
     private var tripCounter = 1 // Counter to create unique trip names
