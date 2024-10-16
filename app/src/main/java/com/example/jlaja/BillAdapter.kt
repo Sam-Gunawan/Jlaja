@@ -7,29 +7,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 // Adapter class for RecyclerView to display the list of bills
-class BillsAdapter(private val billsList: List<String>) :
-    RecyclerView.Adapter<BillsAdapter.BillViewHolder>() {
+class BillsAdapter(private val billsList: List<String>) : RecyclerView.Adapter<BillsAdapter.BillViewHolder>() {
 
-    // ViewHolder to represent each bill item in the RecyclerView
-    class BillViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val billNameTextView: TextView = itemView.findViewById(R.id.bill_name_textview)
-    }
-
-    // Inflate the item layout for each bill
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BillViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_bill, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_bill, parent, false)
         return BillViewHolder(view)
     }
 
-    // Bind data to each item in the RecyclerView
     override fun onBindViewHolder(holder: BillViewHolder, position: Int) {
-        val bill = billsList[position]
-        holder.billNameTextView.text = bill
+        holder.bind(billsList[position])
     }
 
-    // Get the number of bills in the list
-    override fun getItemCount(): Int {
-        return billsList.size
+    override fun getItemCount(): Int = billsList.size
+
+    class BillViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val billTextView: TextView = itemView.findViewById(R.id.bill_textview)
+
+        fun bind(billDetails: String) {
+            billTextView.text = billDetails
+        }
     }
 }

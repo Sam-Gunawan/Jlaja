@@ -52,9 +52,13 @@ class TripDetailsActivity : AppCompatActivity() {
             val billAmount = data.getStringExtra("bill_amount")
             val paidBy = data.getStringExtra("paid_by")
             val membersList = data.getStringArrayListExtra("members")
+            val billDetails = "Bill Name: $billName, Amount: $billAmount, Paid By: $paidBy, Members: ${membersList?.joinToString()}"
+            billsList.add(billDetails)
 
             // Update the UI to display the bill summary
             updateBillSummary(billName, billAmount, paidBy, membersList)
+
+            billsRecyclerView.adapter?.notifyDataSetChanged()
         }
     }
 

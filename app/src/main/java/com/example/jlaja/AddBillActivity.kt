@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
@@ -20,6 +21,7 @@ class AddBillActivity : AppCompatActivity() {
     private lateinit var membersRecyclerView: RecyclerView
     private lateinit var membersAdapter: MembersAdapter
     private lateinit var saveBillButton: Button
+    private lateinit var spinnerAdapter: ArrayAdapter<String>
 
     private val membersList = mutableListOf<String>()
 
@@ -39,6 +41,11 @@ class AddBillActivity : AppCompatActivity() {
         membersAdapter = MembersAdapter(membersList)
         membersRecyclerView.adapter = membersAdapter
 
+        // Initialize Spinner adapter with an empty list (since no members are added yet)
+        spinnerAdapter = ArrayAdapter(this@AddBillActivity, android.R.layout.simple_spinner_item, membersList)
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        paidBySpinner.adapter = spinnerAdapter
+
         // Button to add members
         val addMembersButton: Button = findViewById(R.id.button2)
         addMembersButton.setOnClickListener {
@@ -54,7 +61,7 @@ class AddBillActivity : AppCompatActivity() {
     private fun saveBill() {
         val billName = billNameEditText.text.toString().trim()
         val billAmount = billAmountEditText.text.toString().trim()
-        val paidBy = paidBySpinner.selectedItem.toString()
+        val paidBy = paidBySpinner.selectedItem?.toString() ?: ""
 
         if (billName.isNotEmpty() && billAmount.isNotEmpty()) {
             // Return the bill details to TripDetailsActivity
@@ -78,8 +85,12 @@ class AddBillActivity : AppCompatActivity() {
             .setPositiveButton("Add") { dialog, _ ->
                 val memberName = memberNameEditText.text.toString().trim()
                 if (memberName.isNotEmpty()) {
+                    // Add the new member to the list
                     membersList.add(memberName)
                     membersAdapter.notifyItemInserted(membersList.size - 1)
+
+                    // Update the Spinner to reflect the new member added
+                    spinnerAdapter.notifyDataSetChanged()
                 }
                 dialog.dismiss()
             }
