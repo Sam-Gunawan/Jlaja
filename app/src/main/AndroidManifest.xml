@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Jlaja"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light">
@@ -28,15 +28,22 @@
         <activity
             android:name=".TripDetailsActivity"
             android:exported="true"
-            android:label="Trip Details" />
+            android:label="Trip Details"
+            android:theme="@style/Theme.AppCompat.Light" />
 
         <!-- Register AddBillActivity -->
         <activity
             android:name=".AddBillActivity"
             android:exported="true"
-            android:label="Add Bill" />
+            android:label="Add Bill"
+            android:theme="@style/Theme.AppCompat.Light" />
 
-
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:label="Homepage"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
 
     </application>
 

@@ -1,5 +1,6 @@
 package com.example.jlaja
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -25,7 +26,8 @@ class MainActivity : ComponentActivity() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            setContentView(R.layout.home)
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -50,7 +52,7 @@ class MainActivity : ComponentActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    setContentView(R.layout.home)
+                    setContentView(R.layout.activity_main)
                 } else {
                     Toast.makeText(
                         baseContext,
