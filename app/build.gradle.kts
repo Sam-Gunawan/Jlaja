@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
+//    id("com.android.application")
+//    id("com.google.gms.google-services")
 }
 
 android {
@@ -59,6 +62,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.material)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.firebase.auth)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.constraintlayout)
@@ -70,6 +77,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
+    implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
+    implementation("com.google.firebase:firebase-auth")
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
