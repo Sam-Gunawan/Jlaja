@@ -25,10 +25,22 @@ class MainActivity : ComponentActivity() {
     public override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
-        if (currentUser != null) {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+//        if (currentUser != null) {
+//            val intent = Intent(this, HomeActivity::class.java)
+//            startActivity(intent)
+//        }
+        val authListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
+            val user = firebaseAuth.currentUser
+            if (user != null) {
+                if (user.isEmailVerified) {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(applicationContext, "Please verify your email address.", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
+        auth.addAuthStateListener(authListener)
     }
 
     fun signIn(email: String,password: String){
@@ -36,7 +48,15 @@ class MainActivity : ComponentActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    setContentView(R.layout.home)
+                    user?.sendEmailVerification()
+                        ?.addOnCompleteListener { verificationTask ->
+                            if (verificationTask.isSuccessful) {
+                                Toast.makeText(applicationContext, "Verification email sent!", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(applicationContext, "Verification email error!", Toast.LENGTH_SHORT).show()
+                                logOutHere()                            }
+                        }
+//                    setContentView(R.layout.home)
                 } else {
                     Toast.makeText(
                         baseContext,
@@ -79,6 +99,10 @@ class MainActivity : ComponentActivity() {
     }
 
     fun logOut(view: View){
+        Firebase.auth.signOut()
+        initLogIn()
+    }
+    fun logOutHere(){
         Firebase.auth.signOut()
         initLogIn()
     }
