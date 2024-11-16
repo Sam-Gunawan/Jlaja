@@ -71,31 +71,37 @@ class MainActivity : ComponentActivity() {
     }
 
     fun storeUserData(userId: String, name: String, email: String){
-        val db = Firebase.firestore
-        val userData = hashMapOf(
-            "username" to name,
+        val db = Firebase.firestore //init database
+        val userData = hashMapOf( //store user data into hash map
+            "username" to name, //"username", "email", "uid" is column name to (value)
             "email" to email,
+            "uid" to userId
         )
         db.collection("users").document(userId).set(userData)
+        //store the data into database, "users" is table/collection name
+        //'userID' is the firebase user id used to store data in respect to the user
+        //'userData' is the hashmap from before
+        //to get uid, first get user by 'val user = FirebaseAuth.getInstance().currentUser'
+        //then get uid by var uid = user.uid
     }
 
     fun getUserData(userId: String) {
-        val db = Firebase.firestore
+        val db = Firebase.firestore //init database
         db.collection("users").document(userId)
-            .get()
-            .addOnSuccessListener { documentSnapshot ->
-                if (documentSnapshot.exists()) {
-                    val username = documentSnapshot.getString("username")
-                    val email = documentSnapshot.getString("email")
+            //getting the data from database, "users" is table/collection name
+            //'userID' is to know which user's data to get
+            .get() //get
+            .addOnSuccessListener { data -> //on success store to 'data'
+                if (data.exists()) { //check if the information is there
+                    val username = data.getString("username") //get the data with data.getString((what value))
+                    val email = data.getString("email")
                     Log.d("UserData", "Username: $username, Email: $email")
                 } else {
-                    println("No such document")
+                    Log.d("UserData","Fail to get data")
                 }
             }
             .addOnFailureListener { exception ->
             }
-
-
     }
 
     fun logIn(email: String,password: String){
