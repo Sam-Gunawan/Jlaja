@@ -1,13 +1,32 @@
 {
   "project_info": {
-    "project_number": "775335095032",
-    "project_id": "jlaja-a0430",
-    "storage_bucket": "jlaja-a0430.appspot.com"
+    "project_number": "535711154314",
+    "project_id": "easy-chat-backend-faf89",
+    "storage_bucket": "easy-chat-backend-faf89.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:775335095032:android:ed6b21a32b243ab843290d",
+        "mobilesdk_app_id": "1:535711154314:android:2a66101fdea8ead527ed73",
+        "android_client_info": {
+          "package_name": "com.example.easychat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4DqrZACfpAFGHceL9V5U78mc1pgm_Ov4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535711154314:android:92bcc0556c23372327ed73",
         "android_client_info": {
           "package_name": "com.example.jlaja"
         }
@@ -15,7 +34,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyATqpiOD4kHcxGbtTLVYs7VXaCG8evxYaU"
+          "current_key": "AIzaSyD4DqrZACfpAFGHceL9V5U78mc1pgm_Ov4"
         }
       ],
       "services": {

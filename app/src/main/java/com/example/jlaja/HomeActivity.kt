@@ -3,10 +3,14 @@ package com.example.jlaja
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class HomeActivity : AppCompatActivity() {
@@ -15,6 +19,7 @@ class HomeActivity : AppCompatActivity() {
     private var tripCounter = 1 // Counter to create unique trip names
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val user = FirebaseAuth.getInstance().currentUser
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -64,5 +69,10 @@ class HomeActivity : AppCompatActivity() {
         }
 
         tripButtonContainer.addView(newButton)
+    }
+    fun logOut(view: View){
+        Firebase.auth.signOut()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
