@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "535711154314",
+    "project_id": "easy-chat-backend-faf89",
+    "storage_bucket": "easy-chat-backend-faf89.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535711154314:android:2a66101fdea8ead527ed73",
+        "android_client_info": {
+          "package_name": "com.example.easychat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4DqrZACfpAFGHceL9V5U78mc1pgm_Ov4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
