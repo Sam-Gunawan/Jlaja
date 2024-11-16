@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -12,6 +13,7 @@ import androidx.activity.ComponentActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*
 import kotlinx.coroutines.tasks.await
@@ -41,7 +43,7 @@ class MainActivity : ComponentActivity() {
         auth.addAuthStateListener(authListener)
     }
 
-    fun signIn(email: String,password: String){
+    fun signIn(name: String, email: String,password: String){
         logOutHere()
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
@@ -51,6 +53,8 @@ class MainActivity : ComponentActivity() {
                         ?.addOnCompleteListener { verificationTask ->
                             if (verificationTask.isSuccessful) {
                                 Toast.makeText(applicationContext, "Verification email sent!", Toast.LENGTH_SHORT).show()
+                                storeUserData(user.uid, name, email)
+                                getUserData(user.uid)
                                 checkEmailVerification(user)
                             } else {
                                 Toast.makeText(applicationContext, "Verification email error!", Toast.LENGTH_SHORT).show()
@@ -64,6 +68,34 @@ class MainActivity : ComponentActivity() {
                     ).show()
                 }
             }
+    }
+
+    fun storeUserData(userId: String, name: String, email: String){
+        val db = Firebase.firestore
+        val userData = hashMapOf(
+            "username" to name,
+            "email" to email,
+        )
+        db.collection("users").document(userId).set(userData)
+    }
+
+    fun getUserData(userId: String) {
+        val db = Firebase.firestore
+        db.collection("users").document(userId)
+            .get()
+            .addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists()) {
+                    val username = documentSnapshot.getString("username")
+                    val email = documentSnapshot.getString("email")
+                    Log.d("UserData", "Username: $username, Email: $email")
+                } else {
+                    println("No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+            }
+
+
     }
 
     fun logIn(email: String,password: String){
@@ -85,25 +117,11 @@ class MainActivity : ComponentActivity() {
             }
     }
 
-    fun toSignUp(view: View){
-        setContentView(R.layout.sign_up)
-        var signInEmail: EditText = findViewById(R.id.signUpEmail)
-        var signInPassword: EditText = findViewById(R.id.signUpPassword)
-        val signInButton: Button = findViewById(R.id.signUpButton)
-
-        signInButton.setOnClickListener{
-            signIn(signInEmail.text.toString(),signInPassword.text.toString())
-        }
-
-    }
-    fun toLogIn(view: View){
-        initLogIn()
-    }
-
     fun logOut(view: View){
         Firebase.auth.signOut()
         initLogIn()
     }
+
     fun logOutHere(){
         Firebase.auth.signOut()
     }
@@ -144,5 +162,21 @@ class MainActivity : ComponentActivity() {
             }
             handler.post(checkVerificationTask)
         }
+    }
+
+    fun toSignUp(view: View){
+        setContentView(R.layout.sign_up)
+        val signInEmail: EditText = findViewById(R.id.signUpEmail)
+        val signInPassword: EditText = findViewById(R.id.signUpPassword)
+        val signInUserName: EditText = findViewById(R.id.signUpUsername)
+        val signInButton: Button = findViewById(R.id.signUpButton)
+
+        signInButton.setOnClickListener{
+            signIn(signInUserName.text.toString(), signInEmail.text.toString(), signInPassword.text.toString())
+        }
+
+    }
+    fun toLogIn(view: View){
+        initLogIn()
     }
 }
