@@ -66,6 +66,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.firebase.auth)
+
+    implementation ("com.google.mlkit:text-recognition:16.0.1")
+    implementation("com.vanniktech:android-image-cropper:4.6.0")
 //    implementation(libs.androidx.appcompat)
 //    implementation(libs.androidx.recyclerview)
 //    implementation(libs.firebase.auth.ktx)
