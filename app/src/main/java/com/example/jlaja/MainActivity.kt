@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -60,6 +61,8 @@ class MainActivity : AppCompatActivity() {
                 val tripName = tripNameEditText.text.toString().trim()
                 if (tripName.isNotEmpty()) {
                     addNewTrip(tripName) // Add the trip with the user-defined name
+                } else {
+                    Toast.makeText(this, "Trip name cannot be empty", Toast.LENGTH_SHORT).show()
                 }
                 dialog.dismiss()
             }

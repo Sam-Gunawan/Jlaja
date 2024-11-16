@@ -6,29 +6,30 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MembersAdapter(private val members: MutableList<String>) : RecyclerView.Adapter<MembersAdapter.MemberViewHolder>() {
+class MembersAdapter(
+    private val members: List<String>,            // List of member names
+    private val memberAmounts: Map<String, Double> // Map to track each member's owed amount
+) : RecyclerView.Adapter<MembersAdapter.MemberViewHolder>() {
 
-    // ViewHolder class
     class MemberViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val memberNameTextView: TextView = itemView.findViewById(R.id.member_name_text_view) // Assuming this TextView is in member_item.xml
+        private val memberShareTextView: TextView = itemView.findViewById(R.id.member_share_textview)
 
-        // Binds the member name to the TextView
-        fun bind(memberName: String) {
-            memberNameTextView.text = memberName
+        // Bind member name and their current owed amount
+        fun bind(memberName: String, amountOwed: Double) {
+            memberShareTextView.text = "$memberName's current bill: $${"%.2f".format(amountOwed)}"
         }
     }
 
-    // Inflates the item view for each member
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemberViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.member_item, parent, false) // Make sure this is the correct layout
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.member_item, parent, false)
         return MemberViewHolder(view)
     }
 
-    // Binds the data to the ViewHolder
     override fun onBindViewHolder(holder: MemberViewHolder, position: Int) {
-        holder.bind(members[position])
+        val memberName = members[position]
+        val amountOwed = memberAmounts[memberName] ?: 0.0 // Get the current owed amount, default to 0.0 if not found
+        holder.bind(memberName, amountOwed)
     }
 
-    // Returns the size of the member list
     override fun getItemCount(): Int = members.size
 }

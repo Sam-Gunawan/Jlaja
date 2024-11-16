@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_trip_detail.xml -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -6,61 +6,44 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Header for Bills List -->
+    <!-- Trip Name Header -->
     <TextView
         android:id="@+id/bills_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bills"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp" />
+        android:text="Trip Details"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
-    <!-- Bill Summary Section (Displayed below header) -->
+    <!-- Total Bills Count -->
     <TextView
-        android:id="@+id/bill_name_textview"
+        android:id="@+id/total_bills_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bill Name"
-        android:visibility="gone" /> <!-- Initially hidden, will show when bill is saved -->
+        android:text="Total bills: 0"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
 
-    <TextView
-        android:id="@+id/bill_amount_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bill Amount"
-        android:visibility="gone" /> <!-- Initially hidden -->
-
-    <TextView
-        android:id="@+id/paid_by_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Paid By"
-        android:visibility="gone" /> <!-- Initially hidden -->
-
-    <!-- RecyclerView for members list -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/members_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" /> <!-- Initially hidden -->
-
-    <!-- RecyclerView for the list of bills (below the bill summary) -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bills_recycler_view"
+    <!-- ScrollView to hold dynamic buttons for trips -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scrollbars="vertical" />
+        android:layout_weight="1">
 
-    <!-- Button to add a new bill -->
+        <LinearLayout
+            android:id="@+id/tripDetail_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+    </ScrollView>
+
+    <!-- Add Bill Button -->
     <Button
         android:id="@+id/add_bill_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="Add Bill"
-        android:padding="8dp"
-        android:textSize="16sp" />
+        android:layout_gravity="center"/>
 
 </LinearLayout>
