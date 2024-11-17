@@ -19,6 +19,7 @@ class LoginPage : AppCompatActivity() {
             insets
         }
     }
+
     fun toSignUpPage(view: View?) {
         val intent = Intent(
             this@LoginPage,
