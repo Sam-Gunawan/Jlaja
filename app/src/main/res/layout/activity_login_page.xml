@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginPage">
+    tools:context=".UserAuth">
 
     <ImageView
         android:id="@+id/icon"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:onClick="toSignUpPage"
+                android:onClick="toSignUp"
                 android:text="Create an account"
                 android:textColor="#006CD2"
                 android:textStyle="bold" />
@@ -127,9 +127,12 @@
         <ImageView
             android:id="@+id/SignInButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginBottom="20dp"
-            android:onClick="toSecondTimeUserHome"
+            android:contentDescription="Sign In Button"
+            app:layout_constraintTop_toBottomOf="@+id/ForgotPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/signinbutton" />
 
         <ImageView

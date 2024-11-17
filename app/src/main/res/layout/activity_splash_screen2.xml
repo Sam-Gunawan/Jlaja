@@ -145,7 +145,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:onClick="toLoginPage"
+            android:onClick="toUserAuth"
             app:srcCompat="@drawable/next_button" />
 
     </LinearLayout>

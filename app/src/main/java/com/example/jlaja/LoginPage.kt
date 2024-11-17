@@ -19,6 +19,7 @@ class LoginPage : AppCompatActivity() {
             insets
         }
     }
+
     fun toSignUpPage(view: View?) {
         val intent = Intent(
             this@LoginPage,
@@ -26,7 +27,6 @@ class LoginPage : AppCompatActivity() {
         )
         startActivity(intent)
     }
-
 
     fun toSecondTimeUserHome(view: View?) {
         val intent = Intent(

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpPage">
+    tools:context=".UserAuth">
 
     <ImageView
         android:id="@+id/imageView"
@@ -35,8 +35,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp
-"
+            android:layout_marginBottom="10dp"
             android:text="Start Your Adventure!"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -58,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:onClick="toLoginPage"
+                android:onClick="toLogIn"
                 android:text="Login in here"
                 android:textColor="#006CD2"
                 android:textStyle="bold" />
@@ -203,7 +202,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:onClick="toFirstTimeUserHome"
             app:srcCompat="@drawable/signinbutton" />
 
         <ImageView
