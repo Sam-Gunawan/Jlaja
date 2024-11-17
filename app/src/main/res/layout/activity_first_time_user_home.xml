@@ -43,12 +43,14 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="18dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginLeft="18dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Username"
         app:layout_constraintVertical_bias="0.0">
@@ -349,10 +351,10 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:paddingTop="10dp"
                     android:id="@+id/NoTrips"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
                     app:srcCompat="@drawable/no_trips" />
 
                 <TextView
@@ -366,10 +368,10 @@
 
                 <TextView
                     android:id="@+id/PastTripsDesc"
-                    android:gravity="center_horizontal"
-                    android:padding="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
                     android:text="Start building your trip itinerary by adding places to visit, activities, and key plans. Make this trip unforgettable!"
                     android:textSize="12sp" />
             </LinearLayout>
