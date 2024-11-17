@@ -1,4 +1,4 @@
-package com.example.uiux
+package com.example.jlaja
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,30 +8,34 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class SignUpPage : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_sign_up_page)
+        setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
     }
+
     fun toLoginPage(view: View?) {
         val intent = Intent(
-            this@SignUpPage,
+            this@MainActivity,
             LoginPage::class.java
         )
         startActivity(intent)
     }
 
-    fun toFirstTimeUserHome(view: View?) {
+    fun toSplashScreen2(view: View?) {
         val intent = Intent(
-            this@SignUpPage,
-            FirstTimeUserHome::class.java
+            this@MainActivity,
+            SplashScreen2::class.java
         )
         startActivity(intent)
     }
+
+
 }

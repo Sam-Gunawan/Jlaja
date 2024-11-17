@@ -1,4 +1,4 @@
-package com.example.uiux
+package com.example.jlaja
 
 import android.content.Intent
 import android.os.Bundle

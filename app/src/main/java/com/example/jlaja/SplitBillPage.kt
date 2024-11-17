@@ -1,4 +1,4 @@
-package com.example.uiux
+package com.example.jlaja
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
