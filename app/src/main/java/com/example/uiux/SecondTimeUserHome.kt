@@ -26,4 +26,12 @@ class SecondTimeUserHome : AppCompatActivity() {
         )
         startActivity(intent)
     }
+
+    fun toSplitBillMain(view: View?) {
+        val intent = Intent(
+            this@SecondTimeUserHome,
+            SplitBillMain::class.java
+        )
+        startActivity(intent)
+    }
 }

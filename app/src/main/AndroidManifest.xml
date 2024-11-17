@@ -16,6 +16,27 @@
             android:name=".SplitBillPage"
             android:exported="false" />
         <activity
+            android:name=".AddBillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BillsAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".ItemsAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".MemberDetailsAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".MembersAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".SplitBillMain"
+            android:exported="false" />
+        <activity
+            android:name=".TripDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SecondTimeUserHome"
             android:exported="false" />
         <activity

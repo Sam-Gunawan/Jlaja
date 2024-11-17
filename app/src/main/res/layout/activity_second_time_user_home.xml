@@ -303,6 +303,7 @@
                         android:textStyle="bold" />
 
                     <ImageButton
+                        android:onClick="toSplitBillMain"
                         android:id="@+id/imageButton5"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
@@ -531,6 +532,7 @@
 
                 <ImageButton
                     android:id="@+id/navAdd"
+                    android:onClick="toSplitBillMain"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"

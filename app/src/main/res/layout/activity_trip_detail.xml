@@ -1,0 +1,49 @@
+<!-- activity_trip_detail.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Trip Name Header -->
+    <TextView
+        android:id="@+id/bills_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip Details"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <!-- Total Bills Count -->
+    <TextView
+        android:id="@+id/total_bills_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total bills: 0"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- ScrollView to hold dynamic buttons for trips -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/tripDetail_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+    </ScrollView>
+
+    <!-- Add Bill Button -->
+    <Button
+        android:id="@+id/add_bill_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Bill"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
