@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -34,7 +36,7 @@ class TripDetailsActivity : AppCompatActivity() {
 
         // Initialize views
         tripNameTextView= findViewById(R.id.bills_header)
-        val addBillButton : Button = findViewById(R.id.add_bill_button)
+        val addBillButton : ImageButton = findViewById(R.id.add_bill_button)
         totalBillsTextView = findViewById(R.id.total_bills_textview)
         tripDetailButtonContainer = findViewById(R.id.tripDetail_button_container) // Add initialization
 
@@ -112,5 +114,9 @@ class TripDetailsActivity : AppCompatActivity() {
 
     companion object {
         private const val REQUEST_ADD_BILL = 1
+    }
+
+    fun BackButton(view: View?) {
+        onBackPressed()
     }
 }

@@ -4,9 +4,11 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
@@ -25,7 +27,7 @@ class AddBillActivity : AppCompatActivity() {
     private lateinit var paidBySpinner: Spinner
     private lateinit var membersRecyclerView: RecyclerView
     private lateinit var membersAdapter: MembersAdapter
-    private lateinit var saveBillButton: Button
+    private lateinit var saveBillButton: ImageButton
     private lateinit var addItemButton: Button
     private lateinit var itemsRecyclerView: RecyclerView
     private lateinit var itemsAdapter: ItemsAdapter
@@ -228,5 +230,8 @@ class AddBillActivity : AppCompatActivity() {
             }
             .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
             .show()
+    }
+    fun BackButton(view: View?) {
+        onBackPressed()
     }
 }

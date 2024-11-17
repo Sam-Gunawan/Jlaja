@@ -1,6 +1,5 @@
 package com.example.uiux
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -19,11 +18,7 @@ class SplitBillPage : AppCompatActivity() {
             insets
         }
     }
-    fun toSecondTimeUserHome(view: View?) {
-        val intent = Intent(
-            this@SplitBillPage,
-            SecondTimeUserHome::class.java
-        )
-        startActivity(intent)
+    fun BackButton(view: View?) {
+        onBackPressed()
     }
 }

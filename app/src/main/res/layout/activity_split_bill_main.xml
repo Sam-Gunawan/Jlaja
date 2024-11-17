@@ -1,42 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="#00FFFFFF"
+    tools:context=".SplitBillMain">
 
     <!-- Header for Trip List -->
-    <TextView
-        android:id="@+id/trips_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Trips"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="8dp" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="15dp">
 
+        <ImageButton
+            android:id="@+id/BackToHomePageButton"
+            android:onClick="BackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:padding="20dp"
+            app:srcCompat="@drawable/arrow_left" />
+
+        <TextView
+            android:id="@+id/TripDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Trips"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
     <!-- ScrollView to hold dynamic buttons for trips -->
-    <ScrollView
-        android:layout_width="match_parent"
+
+
+    <LinearLayout
+        android:id="@+id/trip_button_container"
+        android:layout_margin="20dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        <LinearLayout
-            android:id="@+id/trip_button_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-
-    </ScrollView>
 
     <!-- Button to add a new trip -->
-    <Button
-        android:id="@+id/add_trip_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Add Trip"
-        android:padding="8dp"
-        android:textSize="16sp" />
-</LinearLayout>
+    <!--    <Button-->
+    <!--        android:id="@+id/add_trip_button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="20dp"-->
+    <!--        android:padding="8dp"-->
+    <!--        android:text="Add Trip"-->
+    <!--        android:textSize="16sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/rounded_corner4"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="-20dp"
+        >
+
+        <ImageButton
+            android:id="@+id/add_trip_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:padding="20dp"
+            app:srcCompat="@drawable/addtrip" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
