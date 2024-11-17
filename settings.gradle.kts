@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Jlaja"
+rootProject.name = "UIUX"
 include(":app")
  

@@ -1,42 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
-    <!-- Header for Trip List -->
+    <ImageView
+        android:id="@+id/splash1phone1"
+        android:layout_width="wrap_content"
+        android:layout_height="340dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/splash1phone1" />
+
     <TextView
-        android:id="@+id/trips_header"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trips"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Seamless Group Planning"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="8dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/splash1phone1" />
 
-    <!-- ScrollView to hold dynamic buttons for trips -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <TextView
+        android:id="@+id/body"
+        android:layout_width="271dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="30dp"
+        android:text="Organize your trip effortlessly with features designed for teamwork!"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
-        <LinearLayout
-            android:id="@+id/trip_button_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-
-    </ScrollView>
-
-    <!-- Button to add a new trip -->
-    <Button
-        android:id="@+id/add_trip_button"
+    <ImageView
+        android:id="@+id/box1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Add Trip"
-        android:padding="8dp"
-        android:textSize="16sp" />
-</LinearLayout>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/body"
+        app:srcCompat="@drawable/splash1box1" />
+
+    <TextView
+        android:id="@+id/box1desc"
+        android:layout_width="245dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="80dp"
+        android:text="Make decisions together with polls and voting to ensure everyone’s preferences are counted."
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <ImageView
+        android:id="@+id/box2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box1"
+        app:srcCompat="@drawable/splash1box2" />
+
+    <TextView
+        android:id="@+id/box2desc"
+        android:layout_width="245dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="50dp"
+        android:text="Keep everyone on the same page with a shared itinerary that updates in real-time."
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box1" />
+
+    <ImageView
+        android:id="@+id/box3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box2"
+        app:srcCompat="@drawable/splash1box3" />
+
+    <TextView
+        android:id="@+id/box3desc"
+        android:layout_width="240dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="40dp"
+        android:text="Track trip expenses and settle payments with a simple split—no more post-trip headaches!"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box2" />
+
+    <ImageButton
+        android:id="@+id/Next_toSplashScreen2Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="24dp"
+        android:background="#00FFFFFF"
+        android:onClick="toSplashScreen2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/next_button" />
+
+    <ImageButton
+        android:id="@+id/Skip_toLoginPageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        android:onClick="toLoginPage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/skip_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpPage">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="70dp"
+        android:foregroundGravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/signupbox" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="84dp"
+        android:text="Start Your Adventure!"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="9dp"
+        android:text="Already have an account?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/toLoginPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="9dp"
+        android:onClick="toLoginPage"
+        android:text="Login in here"
+        android:textColor="#006CD2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/desc"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ImageView
+        android:id="@+id/Divider1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc"
+        app:srcCompat="@drawable/logindivider1" />
+
+    <TextView
+        android:id="@+id/FirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:text="First Name"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Divider1" />
+
+    <EditText
+        android:id="@+id/EnterFirstNameBox"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="Your First Name"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FirstName" />
+
+    <TextView
+        android:id="@+id/SecondName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Second Name"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterFirstNameBox" />
+
+    <EditText
+        android:id="@+id/EnterSecondNameBox"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="Your Second Name"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SecondName" />
+
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Email"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterSecondNameBox" />
+
+    <EditText
+        android:id="@+id/EnterEmailBox"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="Your Email"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Email" />
+
+    <TextView
+        android:id="@+id/YourPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Your Password"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterEmailBox" />
+
+    <EditText
+        android:id="@+id/EnterPasswordBox"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="Your Password"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/YourPassword" />
+
+    <TextView
+        android:id="@+id/ConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Confirm Password"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterPasswordBox" />
+
+    <EditText
+        android:id="@+id/ConfirmPasswordBox"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPassword" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="108dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="14dp"
+        android:text="I agree with"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordBox" />
+
+    <TextView
+        android:id="@+id/toTermsAndCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:text=" terms and conditions"
+        android:textColor="#006CD2"
+        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordBox" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:text=" by Jlaja"
+        app:layout_constraintStart_toEndOf="@+id/toTermsAndCondition"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordBox" />
+
+    <ImageView
+        android:id="@+id/SignInButton"
+        android:onClick="toFirstTimeUserHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        app:srcCompat="@drawable/signinbutton" />
+
+    <ImageView
+        android:id="@+id/Divider2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignInButton"
+        app:srcCompat="@drawable/logindivider2" />
+
+    <ImageView
+        android:id="@+id/ContinueWithGoogleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Divider2"
+        app:srcCompat="@drawable/googlesignin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
