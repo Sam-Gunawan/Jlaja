@@ -9,15 +9,16 @@
 
     <ImageView
         android:id="@+id/splash1phone1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="340dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/splash1phone1" />
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
@@ -42,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/body"
         app:srcCompat="@drawable/splash1box1" />
@@ -52,7 +53,7 @@
         android:layout_width="245dp"
         android:layout_height="50dp"
         android:layout_marginStart="115dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="74dp"
         android:text="Make decisions together with polls and voting to ensure everyone’s preferences are counted."
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,8 +63,8 @@
         android:id="@+id/box2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/box1"
         app:srcCompat="@drawable/splash1box2" />
@@ -73,7 +74,7 @@
         android:layout_width="245dp"
         android:layout_height="50dp"
         android:layout_marginStart="115dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="44dp"
         android:text="Keep everyone on the same page with a shared itinerary that updates in real-time."
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/box2"
         app:srcCompat="@drawable/splash1box3" />
@@ -94,35 +95,42 @@
         android:layout_width="240dp"
         android:layout_height="52dp"
         android:layout_marginStart="115dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="Track trip expenses and settle payments with a simple split—no more post-trip headaches!"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/box2" />
 
-    <ImageButton
-        android:id="@+id/Next_toSplashScreen2Button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="24dp"
-        android:background="#00FFFFFF"
-        android:onClick="toSplashScreen2"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/next_button" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageButton
-        android:id="@+id/Skip_toLoginPageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="#00FFFFFF"
-        android:onClick="toLoginPage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/skip_button" />
+        <ImageButton
+            android:id="@+id/Skip_toLoginPageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:onClick="toLoginPage"
+            app:srcCompat="@drawable/skip_button" />
+
+        <ImageButton
+            android:id="@+id/Next_toSplashScreen2Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:onClick="toSplashScreen2"
+            app:srcCompat="@drawable/next_button" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

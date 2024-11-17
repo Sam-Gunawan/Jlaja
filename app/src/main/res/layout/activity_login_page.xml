@@ -22,146 +22,128 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginEnd="34dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon"
         app:srcCompat="@drawable/loginbox" />
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="28dp"
-        android:text="Welcome Back to Your Adventure"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icon" />
-
-    <TextView
-        android:id="@+id/desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="11dp"
-        android:text="New to here?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <TextView
-        android:id="@+id/toSignUpPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="11dp"
-        android:text="Create an account"
-        android:onClick="toSignUpPage"
-        android:textColor="#006CD2"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/desc"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <ImageView
-        android:id="@+id/Divider1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="45dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toSignUpPage"
-        app:srcCompat="@drawable/logindivider1" />
+        app:layout_constraintTop_toBottomOf="@+id/icon">
 
-    <TextView
-        android:id="@+id/EmailTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:text="Email"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Divider1" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Welcome Back to Your Adventure"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/EnterEmailBox"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:hint="Your Email"
-        android:inputType="textEmailAddress"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailTitle" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/PasswordTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:text="Password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EnterEmailBox" />
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New to here?" />
 
-    <EditText
-        android:id="@+id/EnterPasswordBox"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:hint="Your Password"
-        android:inputType="textPassword"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordTitle" />
+            <TextView
+                android:id="@+id/toSignUpPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:onClick="toSignUpPage"
+                android:text="Create an account"
+                android:textColor="#006CD2"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/ForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/ForgetPassword"
-        android:textColor="#006CD2"
-        android:textSize="10.5sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EnterPasswordBox" />
+        <ImageView
+            android:id="@+id/Divider1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/logindivider1" />
 
-    <ImageView
-        android:id="@+id/SignInButton"
-        android:onClick="toSecondTimeUserHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ForgotPassword"
-        app:srcCompat="@drawable/signinbutton" />
+        <TextView
+            android:id="@+id/EmailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Email" />
 
-    <ImageView
-        android:id="@+id/Divider2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SignInButton"
-        app:srcCompat="@drawable/logindivider2" />
+        <EditText
+            android:id="@+id/EnterEmailBox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner"
+            android:ems="10"
+            android:hint="Your Email"
+            android:inputType="textEmailAddress"
+            android:textSize="14sp" />
 
-    <ImageView
-        android:id="@+id/ContinueWithGoogleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Divider2"
-        app:srcCompat="@drawable/googlesignin" />
+        <TextView
+            android:id="@+id/PasswordTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Password" />
+
+        <EditText
+            android:id="@+id/EnterPasswordBox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner"
+            android:ems="10"
+            android:hint="Your Password"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/ForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/ForgetPassword"
+            android:textColor="#006CD2"
+            android:textSize="10.5sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/SignInButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:onClick="toSecondTimeUserHome"
+            app:srcCompat="@drawable/signinbutton" />
+
+        <ImageView
+            android:id="@+id/Divider2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:srcCompat="@drawable/logindivider2" />
+
+        <ImageView
+            android:id="@+id/ContinueWithGoogleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/googlesignin" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
