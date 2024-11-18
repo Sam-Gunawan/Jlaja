@@ -1,9 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.UIUX" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.UIUX" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#046C04</item>
     </style>
 
     <style name="Theme.UIUX" parent="Base.Theme.UIUX" />
+
+    <style name="Button.Green" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">#046C04</item>
+    </style>
 </resources>

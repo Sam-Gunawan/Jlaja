@@ -81,14 +81,18 @@
         android:layout_marginTop="-20dp"
         >
 
-        <ImageButton
+        <Button
             android:id="@+id/add_trip_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:padding="20dp"
-            app:srcCompat="@drawable/addtrip" />
+            android:text="Add Trips"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_margin="15dp"
+            android:background="@drawable/rounded_corner5"
+            android:padding="5dp"
+            />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
