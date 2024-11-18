@@ -127,7 +127,7 @@ class UserAuth : ComponentActivity() {
             }
     }
 
-    fun logOut(view: View){
+    fun logOutFromAnywhere(){
         Firebase.auth.signOut()
         initLogIn()
     }
@@ -156,15 +156,19 @@ class UserAuth : ComponentActivity() {
         } else {
             val handler = Handler(Looper.getMainLooper())
             val checkVerificationTask = object : Runnable {
+                var hasRun = false
                 override fun run() {
-                    user.reload().addOnCompleteListener { task ->
-                        if (task.isSuccessful && user.isEmailVerified) {
-                            Toast.makeText(applicationContext, "Email verified! You can now proceed.", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(applicationContext, FirstTimeUserHome::class.java)
-                            startActivity(intent)
-                            handler.removeCallbacks(this)
-                        } else {
-                            handler.postDelayed(this, 3000) // Check again after 3 seconds
+                    if(!hasRun){
+                        user.reload().addOnCompleteListener { task ->
+                            if (task.isSuccessful && user.isEmailVerified) {
+                                Toast.makeText(applicationContext, "Email verified! You can now proceed.", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this@UserAuth, FirstTimeUserHome::class.java)
+                                startActivity(intent)
+                                hasRun=true
+                                handler.removeCallbacks(this)
+                            } else {
+                                handler.postDelayed(this, 3000) // Check again after 3 seconds
+                            }
                         }
                     }
                 }
@@ -182,7 +186,7 @@ class UserAuth : ComponentActivity() {
 
         val signInUserName: String = "${signInFirstName.text.toString()} ${signInSecondName.text.toString()}"
         signInButton.setOnClickListener{
-            signIn(signInUserName, signInEmail.text.toString(), signInPassword.text.toString())
+            signIn(signInFirstName.text.toString(), signInEmail.text.toString(), signInPassword.text.toString())
             Log.i("Sign in credentials from signIn OnClick: ", signInUserName)
         }
     }
