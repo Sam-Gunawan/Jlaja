@@ -492,6 +492,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="#00FFFFFF"
+                        android:onClick="toLogOut"
                         app:srcCompat="@drawable/nav_profile" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

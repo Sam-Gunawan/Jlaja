@@ -9,6 +9,9 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.enableEdgeToEdge
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -21,9 +24,14 @@ class UserAuth : ComponentActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_login_page)
         auth = Firebase.auth
-
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         initLogIn()
     }
 
@@ -125,8 +133,10 @@ class UserAuth : ComponentActivity() {
     }
     fun logOutHere(){
         Firebase.auth.signOut()
+//        initLogIn()
     }
     fun initLogIn(){
+        setContentView(R.layout.activity_login_page)
         var logInEmail: EditText = findViewById(R.id.EnterEmailBox)
         var logInPassword: EditText = findViewById(R.id.EnterPasswordBox)
         val logInButton: ImageView = findViewById(R.id.SignInButton)
@@ -162,7 +172,7 @@ class UserAuth : ComponentActivity() {
             handler.post(checkVerificationTask)
         }
     }
-    fun toSignUp(){
+    fun toSignUp(view: View){
         setContentView(R.layout.activity_sign_up_page)
         val signInEmail: EditText = findViewById(R.id.EnterEmailBox)
         val signInPassword: EditText = findViewById(R.id.EnterPasswordBox)
@@ -170,13 +180,15 @@ class UserAuth : ComponentActivity() {
         val signInSecondName: EditText = findViewById(R.id.EnterSecondNameBox)
         val signInButton: ImageView = findViewById(R.id.SignInButton)
 
-        val signInUserName: String = "$signInFirstName $signInSecondName"
+        val signInUserName: String = "${signInFirstName.text.toString()} ${signInSecondName.text.toString()}"
         signInButton.setOnClickListener{
             signIn(signInUserName, signInEmail.text.toString(), signInPassword.text.toString())
+            Log.i("Sign in credentials from signIn OnClick: ", signInUserName)
         }
     }
 
-    fun toLogIn(){
+    fun toLogIn(view: View){
         initLogIn()
+        Log.i("working: toLogIn()", "")
     }
 }

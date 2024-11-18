@@ -14,11 +14,12 @@
         android:layout_marginStart="34dp"
         android:layout_marginTop="70dp"
         android:layout_marginEnd="34dp"
+        android:contentDescription="signUpBox"
         android:foregroundGravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/signupbox" />
+        android:src="@drawable/signupbox" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -69,7 +70,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            app:srcCompat="@drawable/logindivider1" />
+            android:contentDescription="divider"
+            android:src="@drawable/logindivider1" />
 
         <TextView
             android:id="@+id/FirstName"
@@ -202,20 +204,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            app:srcCompat="@drawable/signinbutton" />
+            android:contentDescription="sign in button"
+            android:src="@drawable/signinbutton" />
 
         <ImageView
             android:id="@+id/Divider2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            app:srcCompat="@drawable/logindivider2" />
+            android:contentDescription="log in divider"
+            android:src="@drawable/logindivider2" />
 
         <ImageView
             android:id="@+id/ContinueWithGoogleButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/googlesignin" />
+            android:contentDescription="google sign in button"
+            android:src="@drawable/googlesignin" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
