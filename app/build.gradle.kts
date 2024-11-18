@@ -67,6 +67,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.firebase.auth)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity)
 //    implementation(libs.androidx.appcompat)
 //    implementation(libs.androidx.recyclerview)
 //    implementation(libs.firebase.auth.ktx)

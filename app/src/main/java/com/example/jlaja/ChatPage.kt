@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -35,6 +36,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jlaja.ui.theme.ColorModelMessage
 import com.example.jlaja.ui.theme.ColorUserMessage
+import android.content.Intent
+import androidx.compose.runtime.currentCompositionLocalContext
+import androidx.compose.ui.platform.LocalContext
 
 @Composable
 fun ChatPage(modifier: Modifier = Modifier, viewModel: ChatViewModel) {
@@ -145,20 +149,35 @@ fun MessageInput(onMessageSend : (String) -> Unit) {
 
 @Composable
 fun AppHeader() {
+    val context = LocalContext.current
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.primary)
     ) {
-        Text(
-            modifier = Modifier.padding(16.dp),
-            text = "Jlaja Bot",
-            color = Color.White,
-            fontSize = 22.sp
-        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Button(
+                onClick = {
+                    val intent = Intent(context, MainActivity::class.java)
+                    context.startActivity(intent)},
+                modifier = Modifier.padding(end = 8.dp)
+            ) {
+                Text(text = "Back", color = Color.White)
+            }
+
+            Text(
+                text = "Jlaja Bot",
+                color = Color.White,
+                fontSize = 22.sp
+            )
+        }
     }
 }
-
 
 
 
