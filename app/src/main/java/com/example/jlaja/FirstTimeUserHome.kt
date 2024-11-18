@@ -7,6 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class FirstTimeUserHome : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +32,11 @@ class FirstTimeUserHome : AppCompatActivity() {
 
     fun toLogOut(view: View) {
         val user = UserAuth()
-        user.logOutHere()
+        Firebase.auth.signOut()
+        val intent = Intent(
+            this@FirstTimeUserHome,
+            UserAuth::class.java
+        )
+        startActivity(intent)
     }
 }
