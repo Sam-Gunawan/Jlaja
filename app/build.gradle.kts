@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.uiux"
+    namespace = "com.example.jlaja"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.uiux"
+        applicationId = "com.example.jlaja"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

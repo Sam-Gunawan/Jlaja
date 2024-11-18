@@ -1,4 +1,4 @@
-package com.example.uiux
+package com.example.jlaja
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,29 +8,31 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class SecondTimeUserHome : AppCompatActivity() {
+class LoginPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_second_time_user_home)
+        setContentView(R.layout.activity_login_page)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }
-    fun toSplitBill(view: View?) {
+
+    fun toSignUpPage(view: View?) {
         val intent = Intent(
-            this@SecondTimeUserHome,
-            SplitBillPage::class.java
+            this@LoginPage,
+            SignUpPage::class.java
         )
         startActivity(intent)
     }
 
-    fun toSplitBillMain(view: View?) {
+
+    fun toSecondTimeUserHome(view: View?) {
         val intent = Intent(
-            this@SecondTimeUserHome,
-            SplitBillMain::class.java
+            this@LoginPage,
+            SecondTimeUserHome::class.java
         )
         startActivity(intent)
     }

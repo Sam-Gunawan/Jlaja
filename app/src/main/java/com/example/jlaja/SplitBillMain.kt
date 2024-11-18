@@ -1,4 +1,4 @@
-package com.example.uiux
+package com.example.jlaja
 
 import android.app.AlertDialog
 import android.content.Intent
