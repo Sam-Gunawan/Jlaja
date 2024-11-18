@@ -28,7 +28,6 @@ class LoginPage : AppCompatActivity() {
         startActivity(intent)
     }
 
-
     fun toSecondTimeUserHome(view: View?) {
         val intent = Intent(
             this@LoginPage,

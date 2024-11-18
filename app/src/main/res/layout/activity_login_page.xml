@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginPage">
+    tools:context=".UserAuth">
 
     <ImageView
         android:id="@+id/icon"
@@ -15,7 +15,7 @@
         android:layout_marginTop="136dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jl_icon" />
+        android:src="@drawable/jl_icon" />
 
     <ImageView
         android:id="@+id/box"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon"
-        app:srcCompat="@drawable/loginbox" />
+        android:src="@drawable/loginbox" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:onClick="toSignUpPage"
+                android:onClick="toSignUp"
                 android:text="Create an account"
                 android:textColor="#006CD2"
                 android:textStyle="bold" />
@@ -127,23 +127,27 @@
         <ImageView
             android:id="@+id/SignInButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginBottom="20dp"
-            android:onClick="toSecondTimeUserHome"
-            app:srcCompat="@drawable/signinbutton" />
+            android:contentDescription="Sign In Button"
+            android:clickable="true"
+            app:layout_constraintTop_toBottomOf="@+id/ForgotPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/signinbutton" />
 
         <ImageView
             android:id="@+id/Divider2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            app:srcCompat="@drawable/logindivider2" />
+            android:src="@drawable/logindivider2" />
 
         <ImageView
             android:id="@+id/ContinueWithGoogleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/googlesignin" />
+            android:src="@drawable/googlesignin" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

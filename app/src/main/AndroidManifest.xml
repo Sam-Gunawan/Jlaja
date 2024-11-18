@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.UIUX"
+        android:theme="@style/Theme.Jlaja"
         tools:targetApi="31">
         <activity
             android:name=".SplitBillPage"
@@ -50,6 +50,9 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen2"
+            android:exported="false" />
+        <activity
+            android:name=".UserAuth"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

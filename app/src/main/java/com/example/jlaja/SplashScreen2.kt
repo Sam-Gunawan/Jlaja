@@ -19,10 +19,10 @@ class SplashScreen2 : AppCompatActivity() {
             insets
         }
     }
-    fun toLoginPage(view: View?) {
+    fun toUserAuth(view: View?) {
         val intent = Intent(
             this@SplashScreen2,
-            LoginPage::class.java
+            UserAuth::class.java
         )
         startActivity(intent)
     }

@@ -27,4 +27,9 @@ class FirstTimeUserHome : AppCompatActivity() {
         )
         startActivity(intent)
     }
+
+    fun toLogOut(view: View) {
+        val user = UserAuth()
+        user.logOutHere()
+    }
 }
