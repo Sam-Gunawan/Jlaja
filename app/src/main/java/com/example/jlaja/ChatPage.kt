@@ -15,10 +15,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,15 +28,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jlaja.ui.theme.ColorModelMessage
 import com.example.jlaja.ui.theme.ColorUserMessage
-import android.content.Intent
-import androidx.compose.runtime.currentCompositionLocalContext
-import androidx.compose.ui.platform.LocalContext
 
 @Composable
 fun ChatPage(modifier: Modifier = Modifier, viewModel: ChatViewModel) {
@@ -153,28 +149,39 @@ fun AppHeader() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.primary)
+            .background(Color(0xFF046C04)) // Set the app header color to green
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
+                .padding(10.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Button(
+            // Image-based Back Button
+            IconButton(
                 onClick = {
-                    val intent = Intent(context, MainActivity::class.java)
-                    context.startActivity(intent)},
-                modifier = Modifier.padding(end = 8.dp)
+                    // Use default activity back press
+                    (context as? android.app.Activity)?.onBackPressed()
+                },
+                modifier = Modifier.size(48.dp) // Button size for touch targets
             ) {
-                Text(text = "Back", color = Color.White)
+                Icon(
+                    painter = painterResource(id = R.drawable.arrow_left), // Replace with your arrow resource
+                    contentDescription = "Back",
+                    tint = Color.White, // Set the arrow color
+                    modifier = Modifier.size(25.dp) // Arrow icon size
+                )
             }
 
             Text(
                 text = "Jlaja Bot",
                 color = Color.White,
-                fontSize = 22.sp
+                fontSize = 22.sp,
+                modifier = Modifier.padding(start = 8.dp) // Space between back button and title
             )
         }
     }
 }
+
+
+

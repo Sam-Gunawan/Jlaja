@@ -17,6 +17,7 @@ class GeminiChatbot : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val chatViewModel = ViewModelProvider(this)[ChatViewModel::class.java]
+//        setContentView(R.layout.chat_bot)
         setContent {
             JlajaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
