@@ -1,6 +1,7 @@
 package com.example.jlaja
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -23,5 +24,8 @@ class GeminiChatbot : ComponentActivity() {
                 }
             }
         }
+    }
+    fun BackButton(view: View?) {
+        onBackPressed()
     }
 }

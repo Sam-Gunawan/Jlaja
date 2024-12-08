@@ -22,7 +22,7 @@ class SecondTimeUserHome : AppCompatActivity() {
     fun toChatViewModel(view: View?) {
         val intent = Intent(
             this@SecondTimeUserHome,
-            ChatViewModel::class.java
+            GeminiChatbot::class.java
         )
         startActivity(intent)
     }
