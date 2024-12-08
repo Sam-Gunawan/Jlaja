@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Jlaja</string>
     <string name="ForgetPassword"><u>Forget Password</u>.</string>
+    <string name="title_activity_gemini_chatbot">Gemini</string>
 </resources>
