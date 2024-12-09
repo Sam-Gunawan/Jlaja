@@ -1,150 +1,307 @@
-<!-- activity_trip_detail.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
+        android:layout_height="140dp"
+        android:background="#046C04"
+
+        android:elevation="15dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:elevation="15dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/BackToHomePageButton"
-            android:onClick="BackButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="#00FFFFFF"
+            android:onClick="BackButton"
             android:padding="20dp"
-            app:srcCompat="@drawable/arrow_left" />
-
-        <TextView
-            android:id="@+id/TripDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="Trip Details"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-    <!-- Trip Name Header -->
-
-    <!-- Total Bills Count -->
-    <LinearLayout
-        android:id="@+id/linearLayout7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@drawable/rounded_corner4"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:elevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:srcCompat="@drawable/baseline_arrow_back_24" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
+                android:id="@+id/TripDetails"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:text="Trip Name:"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_gravity="top"
+                android:layout_marginTop="35dp"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:text="Trip:"
+                android:textColor="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/bills_header"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+
                 android:layout_weight="1"
                 android:text="Trip Details"
-                android:textColor="#046C04"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView15"
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/PressToGroupChat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_corner4"
+        android:elevation="20dp"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            app:srcCompat="@drawable/splitbilldivider" />
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corner3"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/total_bills_textview"
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="Coordinate Your Trip!"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/logindivider1" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView16"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total bills: 0"
-            android:textSize="16sp" />
+            android:layout_marginLeft="5dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/baseline_send_24" />
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PressToGroupChat">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/popularDestinationTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Trip Description"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/SeeAllPopularDestinations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text="Edit Description"
+                    android:textColor="#006CD2"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/rounded_corner4"
+                android:elevation="20dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:onClick="toChatViewModel"
+                android:id="@+id/ChatBotButton"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/planetblur"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp" >
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know where to go?"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="60dp"
+                        android:text="Ask J-La!"
+                        android:textColor="#FFFFFF"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Your personal travel companion."
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingRight="40dp"
+                    app:srcCompat="@drawable/baseline_voice_chat_24" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_margin="20dp"
+                android:elevation="5dp"
+                android:background="@drawable/rounded_corner2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_corner3"
+                    android:orientation="horizontal"
+                    android:elevation="5dp"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="Current Bills"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/add_bill_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/rounded_corner4"
+
+                        android:text="+ Add Bill"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/total_bills_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Total bills: 0"
+
+                    android:textColor="#059205"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/tripDetail_button_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Trip Name Header -->
+
+    <!-- Total Bills Count -->
 
     <!-- ScrollView to hold dynamic buttons for trips -->
 
 
-    <ScrollView
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-        android:layout_width="0dp"
-        android:background="@drawable/rounded_corner4"
-        android:scrollbars="none"
-        android:scrollbarSize="0dp"
-        android:padding="20dp"
-        android:elevation="4dp"
-        android:layout_height="0dp"
-        android:layout_margin="20dp">
-
-        <LinearLayout
-            android:id="@+id/tripDetail_button_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            />
-    </ScrollView>
-
-
     <!-- Add Bill Button -->
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@drawable/rounded_corner4"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/add_bill_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="15dp"
-            android:textSize="18sp"
-            android:text="Add Bill"
-            android:background="@drawable/rounded_corner5"
-            android:padding="5dp"
-            />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

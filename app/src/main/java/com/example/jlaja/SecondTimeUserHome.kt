@@ -19,10 +19,10 @@ class SecondTimeUserHome : AppCompatActivity() {
             insets
         }
     }
-    fun toSplitBill(view: View?) {
+    fun toChatViewModel(view: View?) {
         val intent = Intent(
             this@SecondTimeUserHome,
-            SplitBillPage::class.java
+            GeminiChatbot::class.java
         )
         startActivity(intent)
     }

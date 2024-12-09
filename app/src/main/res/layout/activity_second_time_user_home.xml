@@ -102,7 +102,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner"
-                    android:onClick="toSplitBill"
+                    android:onClick="toChatViewModel"
                     android:orientation="horizontal"
                     android:padding="10dp">
 
