@@ -139,6 +139,14 @@ class TripDetailsActivity : AppCompatActivity() {
         private const val REQUEST_ADD_BILL = 1
     }
 
+    fun toChatViewModel(view: View?) {
+        val intent = Intent(
+            this@TripDetailsActivity,
+            GeminiChatbot::class.java
+        )
+        startActivity(intent)
+    }
+
     fun BackButton(view: View?) {
         onBackPressed()
     }
