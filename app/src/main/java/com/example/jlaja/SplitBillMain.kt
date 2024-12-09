@@ -106,7 +106,6 @@ class SplitBillMain : AppCompatActivity() {
     }
 
     fun BackButton(view: View?) {
-        val intent = Intent(this@SplitBillMain, SecondTimeUserHome::class.java)
-        startActivity(intent)
+        onBackPressed()
     }
 }
