@@ -245,7 +245,7 @@
                     android:background="@drawable/rounded_corner3"
                     android:orientation="horizontal"
                     android:elevation="5dp"
-                    android:padding="15dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:id="@+id/textView10"
@@ -255,19 +255,18 @@
                         android:layout_weight="1"
                         android:gravity="center_vertical"
                         android:text="Current Bills"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/add_bill_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
-                        android:background="@drawable/rounded_corner4"
-
+                        android:background="@drawable/rounded_corner2"
+                        android:padding="2dp"
                         android:text="+ Add Bill"
                         android:textColor="#ffffff"
-                        android:textSize="18sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <TextView
