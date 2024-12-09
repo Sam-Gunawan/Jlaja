@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     fun toLoginPage(view: View?) {
         val intent = Intent(
             this@MainActivity,
-            LoginPage::class.java
+            UserAuth::class.java
         )
         startActivity(intent)
     }
