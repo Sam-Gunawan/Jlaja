@@ -10,23 +10,37 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class SplitBillMain : AppCompatActivity() {
 
     private lateinit var tripButtonContainer: LinearLayout
-    private var tripCounter = 1 // Counter to create unique trip names
+//    private var tripCounter = 1 // Counter to create unique trip names
+    private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_split_bill_main)
 
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
+
         tripButtonContainer = findViewById(R.id.trip_button_container)
         val addTripButton: Button = findViewById(R.id.add_trip_button)
 
-        // Add a new trip button dynamically
+//        // Add a new trip button dynamically
+//        addTripButton.setOnClickListener {
+//            showTripNameDialog()
+//        }
+
         addTripButton.setOnClickListener {
-            showTripNameDialog()
+            CreateTripDialog(this) { tripName, emails ->
+                createTrip(tripName, emails)
+            }.showDialog()
         }
     }
 
@@ -77,5 +91,38 @@ class SplitBillMain : AppCompatActivity() {
             SecondTimeUserHome::class.java
         )
         startActivity(intent)
+    }
+
+    private fun createTrip(tripName: String, usernames: List<String>) {
+        val currentUserEmail = auth.currentUser?.email ?: return
+        val tripData = hashMapOf(
+            "name" to tripName,
+            "members" to usernames,
+            "createdBy" to currentUserEmail,
+            "timestamp" to Timestamp.now()
+        )
+
+        db.collection("trips").add(tripData)
+            .addOnSuccessListener {
+                sendNotifications(usernames, tripName)
+                Toast.makeText(this, "Trip created successfully", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Failed to create trip: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun sendNotifications(usernames: List<String>, tripName: String) {
+        db.collection("users").whereIn("username", usernames).get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val token = document.getString("fcmToken")
+                    token?.let { sendFCMNotification(it, "New Trip Invitation", "You have been invited to $tripName!") }
+                }
+            }
+    }
+
+    private fun sendFCMNotification(token: String, title: String, message: String) {
+        // Use Firebase Cloud Messaging SDK to send the notification
     }
 }

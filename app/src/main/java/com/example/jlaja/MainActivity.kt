@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     fun toLoginPage(view: View?) {
         val intent = Intent(
             this@MainActivity,
