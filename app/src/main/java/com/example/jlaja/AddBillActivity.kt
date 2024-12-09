@@ -3,21 +3,26 @@ package com.example.jlaja
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.io.File
+import java.io.ObjectInputStream
+import java.io.ObjectOutputStream
 import java.io.Serializable
 
 data class Item(val name: String, val unitPrice: Double, val memberPortions: MutableMap<String, Int> = mutableMapOf()) : Serializable
+
 
 class AddBillActivity : AppCompatActivity() {
 
@@ -35,6 +40,8 @@ class AddBillActivity : AppCompatActivity() {
     private val membersList = mutableListOf<String>()
     private val memberAmounts = mutableMapOf<String, Double>() // Track each member's current amount
     private val itemsList = mutableListOf<Item>()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,12 +70,12 @@ class AddBillActivity : AppCompatActivity() {
         val billName = intent.getStringExtra("bill_name")
         billNameTextView.text = billName ?: "Unknown Bill"
 
-
-
         val addMembersButton: Button = findViewById(R.id.button2)
         addMembersButton.setOnClickListener {
             showAddMemberDialog()
         }
+
+        loadSavedBill()
 
         addItemButton.setOnClickListener {
             showAddItemDialog()
@@ -162,14 +169,18 @@ class AddBillActivity : AppCompatActivity() {
             .setTitle("Assign Portions for ${item.name}")
             .setView(dialogView)
             .setPositiveButton("Save") { dialog, _ ->
+                // Save the portion data for each member
                 for (i in 0 until portionsContainer.childCount) {
                     val row = portionsContainer.getChildAt(i)
                     val memberName = membersList[i]
                     val portionText = row.findViewById<EditText>(R.id.portion_edittext).text.toString()
                     val portion = portionText.toIntOrNull() ?: 0
 
+                    // Update the memberPortions map for this item
                     item.memberPortions[memberName] = portion
                 }
+
+                // Refresh the item list view
                 itemsAdapter.notifyDataSetChanged()
 
                 // Update member amounts after assigning portions
@@ -181,30 +192,46 @@ class AddBillActivity : AppCompatActivity() {
     }
 
     private fun saveBill() {
-        //fix this nanti
         val billName = billNameTextView.text.toString().trim()
         val paidBy = paidBySpinner.selectedItem?.toString() ?: ""
 
         if (billName.isNotEmpty()) {
             val totalAmount = calculateTotalAmount()
+
+            // Calculate member shares based on the updated memberPortions for each item
             val memberShares = membersList.associateWith { member ->
                 calculateMemberShare(member)
             }
 
+            // Create the Bill object with updated memberShares
             val bill = Bill(
                 name = billName,
                 amount = totalAmount,
                 totalAmount = totalAmount,
                 paidBy = paidBy,
-                memberShares = memberShares,
+                memberShares = memberShares, // Updated memberShares map
                 itemsList = itemsList
             )
 
-            // Return the bill details to TripDetailsActivity
+            // Save the bill to a file
+            val fileName = "bill_${System.currentTimeMillis()}.dat"
+            val file = File(filesDir, fileName)
+            try {
+                ObjectOutputStream(file.outputStream()).use { it.writeObject(bill) }
+                Log.d("SaveBill", "Bill saved locally at: ${file.absolutePath}")
+                Toast.makeText(this, "Bill saved successfully!", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Log.e("SaveBill", "Error saving bill: ${e.message}")
+                Toast.makeText(this, "Error saving bill!", Toast.LENGTH_SHORT).show()
+            }
+
+            // Return the bill details to the previous activity
             val resultIntent = Intent()
             resultIntent.putExtra("bill", bill) // Serialize the Bill object
             setResult(Activity.RESULT_OK, resultIntent)
             finish()
+        } else {
+            Toast.makeText(this, "Bill name cannot be empty!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -230,7 +257,32 @@ class AddBillActivity : AppCompatActivity() {
             .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
             .show()
     }
-    fun BackButton(view: View?) {
-        onBackPressed()
+
+    private fun loadSavedBill() {
+        val savedBillFile = File(filesDir, "bill_${System.currentTimeMillis()}.dat") // Or retrieve file name from saved preferences
+        if (savedBillFile.exists()) {
+            try {
+                ObjectInputStream(savedBillFile.inputStream()).use { stream ->
+                    val savedBill = stream.readObject() as Bill
+                    // Restore the saved data to your UI
+                    billNameTextView.text = savedBill.name
+                    billAmountTextView.text = savedBill.amount.toString()
+                    membersList.clear()
+                    membersList.addAll(savedBill.memberShares.keys)
+                    itemsList.clear()
+                    itemsList.addAll(savedBill.itemsList)
+
+                    // Update adapters with the restored data
+                    membersAdapter.notifyDataSetChanged()
+                    itemsAdapter.notifyDataSetChanged()
+
+                    updateMemberAmounts()
+                    updateTotalAmountDisplay()
+                }
+            } catch (e: Exception) {
+                Log.e("LoadBill", "Error loading bill: ${e.message}")
+            }
+        }
     }
+
 }

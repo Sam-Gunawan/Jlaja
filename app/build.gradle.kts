@@ -71,6 +71,8 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation ("com.google.mlkit:text-recognition:16.0.1")
     implementation("com.vanniktech:android-image-cropper:4.6.0")
+    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation ("com.google.code.gson:gson:2.8.8")
     androidTestImplementation(platform(libs.androidx.compose.bom))
     implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
     implementation("com.google.firebase:firebase-auth")

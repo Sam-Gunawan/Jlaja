@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
 import java.io.Serializable
 
 // Updated Bill data class with memberShares as a Map
@@ -27,6 +26,7 @@ class BillsAdapter(private val bills: List<Bill>) : RecyclerView.Adapter<BillsAd
         private val totalAmountTextView: TextView = itemView.findViewById(R.id.total_amount_textview)
         private val paidByTextView: TextView = itemView.findViewById(R.id.paid_by_textview)
         private val membersSharesContainer: LinearLayout = itemView.findViewById(R.id.members_shares_container)
+
 
         // Bind the bill details to the views
         fun bind(bill: Bill) {
