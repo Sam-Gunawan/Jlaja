@@ -139,7 +139,7 @@ class UserAuth : ComponentActivity() {
         setContentView(R.layout.activity_login_page)
         var logInEmail: EditText = findViewById(R.id.EnterEmailBox)
         var logInPassword: EditText = findViewById(R.id.EnterPasswordBox)
-        val logInButton: ImageView = findViewById(R.id.SignInButton)
+        val logInButton: ImageView = findViewById(R.id.LogInButton)
         Log.i("data from initLogIn", logInEmail.text.toString())
         logInButton.setOnClickListener{
             logIn(logInEmail.text.toString(),logInPassword.text.toString())
