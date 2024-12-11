@@ -140,7 +140,7 @@ public class Profile extends AppCompatActivity  {
            setInProgress(false);
            currentUserModel = task.getResult().toObject(UserModel.class);
            usernameInput.setText(currentUserModel.getUsername());
-           phoneInput.setText(currentUserModel.getPhone());
+//           phoneInput.setText(currentUserModel.getPhone());
        });
    }
 

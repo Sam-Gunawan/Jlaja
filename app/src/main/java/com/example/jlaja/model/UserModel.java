@@ -3,7 +3,7 @@ package com.example.jlaja.model;
 import com.google.firebase.Timestamp;
 
 public class UserModel {
-    private String phone;
+//    private String phone;
     private String username;
     private Timestamp createdTimestamp;
     private String userId;
@@ -12,20 +12,20 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(String phone, String username, Timestamp createdTimestamp,String userId) {
-        this.phone = phone;
+    public UserModel(String username, Timestamp createdTimestamp,String userId) {
+//        this.phone = phone;
         this.username = username;
         this.createdTimestamp = createdTimestamp;
         this.userId = userId;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+//    public String getPhone() {
+//        return phone;
+//    }
+//
+//    public void setPhone(String phone) {
+//        this.phone = phone;
+//    }
 
     public String getUsername() {
         return username;
