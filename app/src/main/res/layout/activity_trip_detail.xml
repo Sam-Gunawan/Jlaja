@@ -126,13 +126,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="15dp"
                     android:layout_weight="1"
+
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -170,7 +172,6 @@
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:background="@drawable/rounded_corner4"
-                        android:elevation="5dp"
                         android:orientation="vertical"
                         android:padding="10dp">
 
@@ -200,14 +201,13 @@
                         android:layout_height="wrap_content"
                         android:onClick="tochecklist2"
                         android:background="@drawable/rounded_corner6"
-                        android:elevation="5dp"
                         android:orientation="horizontal"
                         android:padding="15dp">
 
                         <TextView
                             android:id="@+id/textView14"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="View Tasks"
@@ -216,7 +216,8 @@
                         <ImageView
                             android:id="@+id/imageView4"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/task" />
@@ -228,14 +229,13 @@
                         android:onClick="toChatViewModel"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/rounded_corner6"
-                        android:elevation="5dp"
                         android:orientation="horizontal"
                         android:padding="15dp">
 
                         <TextView
                             android:id="@+id/textView15"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Text J-La"
@@ -322,7 +322,6 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/rounded_corner3"
                     android:orientation="horizontal"
-                    android:elevation="2dp"
                     android:padding="10dp">
 
                     <TextView
