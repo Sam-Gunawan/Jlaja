@@ -480,6 +480,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="#00FFFFFF"
+                        android:onClick="toChat"
                         app:srcCompat="@drawable/nav_task" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -500,7 +501,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="#00FFFFFF"
-                        android:onClick="toLogOut"
+                        android:onClick="toProfile"
                         app:srcCompat="@drawable/nav_profile" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
