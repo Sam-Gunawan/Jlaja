@@ -98,6 +98,9 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".checklist2"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
