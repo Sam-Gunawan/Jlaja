@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Chats"
+        android:icon="@drawable/chat_icon"
+        android:id="@+id/menu_chat"
+        />
+    <item android:title="Profile"
+        android:icon="@drawable/person_icon"
+        android:id="@+id/menu_profile"
+        />
+
+    <item android:title="Split Bill"
+        android:icon="@drawable/chat_icon"
+        android:id="@+id/menu_splitbill"
+        />
+
+    <item android:title="A.I."
+        android:icon="@drawable/chat_icon"
+        android:id="@+id/menu_artificial"
+        />
+</menu>
