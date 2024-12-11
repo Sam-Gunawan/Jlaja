@@ -145,7 +145,6 @@ public class checklist2 extends AppCompatActivity {
 //        value.setText("");
 
 
-
         savecheckbox();
 
     }

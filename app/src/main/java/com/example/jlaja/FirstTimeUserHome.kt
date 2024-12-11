@@ -127,6 +127,7 @@ class FirstTimeUserHome : AppCompatActivity() {
         }
     }
 
+
     private fun addCheckBox(text: String) {
         val checkBox = CheckBox(this).apply {
             this.text = text
