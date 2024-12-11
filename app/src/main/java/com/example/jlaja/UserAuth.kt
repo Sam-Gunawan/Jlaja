@@ -18,6 +18,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*
+import com.google.firebase.Timestamp
 
 class UserAuth : ComponentActivity() {
     //    private var auth : FirebaseAuth = FirebaseAuth.getInstance()
@@ -79,7 +80,8 @@ class UserAuth : ComponentActivity() {
         val userData = hashMapOf( //store user data into hash map
             "username" to name, //"username", "email", "uid" is column name to (value)
             "email" to email,
-            "uid" to userId
+            "userId" to userId,
+            "createdTimestamp" to Timestamp.now()
         )
         db.collection("users").document(userId).set(userData)
         //store the data into database, "users" is table/collection name

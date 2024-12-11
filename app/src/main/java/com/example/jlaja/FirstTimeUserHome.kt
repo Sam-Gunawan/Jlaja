@@ -47,12 +47,18 @@ class FirstTimeUserHome : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun toLogOut(view: View) {
-        val user = UserAuth()
-        Firebase.auth.signOut()
+
+    fun toProfile(view: View) {
         val intent = Intent(
             this@FirstTimeUserHome,
-            UserAuth::class.java
+            Profile::class.java
+        )
+        startActivity(intent)
+    }
+    fun toChat(view: View) {
+        val intent = Intent(
+            this@FirstTimeUserHome,
+            ChatRoom::class.java
         )
         startActivity(intent)
     }

@@ -78,7 +78,18 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+    implementation ("com.firebaseui:firebase-ui-firestore:8.0.2")
+    implementation ("com.google.firebase:firebase-storage:21.0.1")
+
+    implementation ("com.github.dhaval2404:imagepicker:2.1")
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation ("com.google.firebase:firebase-messaging:24.1.0")
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation ("androidx.activity:activity-ktx:1.2.3")
+    implementation ("androidx.fragment:fragment-ktx:1.3.3")
 }
