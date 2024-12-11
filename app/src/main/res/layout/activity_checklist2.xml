@@ -46,9 +46,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="45dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,29 +67,30 @@
             android:textSize="14sp" />
 
         <Button
+            android:id="@+id/addchecklist"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Add"
-            android:id="@+id/addchecklist"/>
+            android:text="Add" />
+
         <Button
+            android:id="@+id/deletechecklist"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Delete"
-            android:id="@+id/deletechecklist"/>
+            android:text="Delete" />
 
-<!--        <Spinner-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="20dp"-->
-<!--            android:id="@+id/spinnerchecklist">-->
+        <!--        <Spinner-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:padding="20dp"-->
+        <!--            android:id="@+id/spinnerchecklist">-->
 
-<!--        </Spinner>-->
+        <!--        </Spinner>-->
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:layout_marginTop="10dp">
 
             <LinearLayout
@@ -99,7 +101,6 @@
         </ScrollView>
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

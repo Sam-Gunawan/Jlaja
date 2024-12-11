@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -76,10 +76,14 @@ public class checklist2 extends AppCompatActivity {
         Button addchecklist = findViewById(R.id.addchecklist);
         Button deletechecklist = findViewById(R.id.deletechecklist);
         checkboxcontainer = findViewById(R.id.checkboxcontainer);
-//        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 
         //load previous Checkbox
-        //loadCheckBox();
+        try {
+            loadCheckBox();
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
 
         addchecklist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,58 +91,92 @@ public class checklist2 extends AppCompatActivity {
                 addcheckbox();
             }
         });
-        deletechecklist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deletecheckbox(value);
-            }
-        });
+//        deletechecklist.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                deletecheckbox(value);
+//            }
+//        });
 
     }
 
     private void addcheckbox() {
+        CheckBox checkbox = new CheckBox(this);
+
+//        if (text != null) {
+//            checkbox.setText(text);
+//            checkboxcontainer.addView(checkbox);
+//        }
+
         if (TextUtils.isEmpty(value.getText())) {
             Toast.makeText(this, "Checkbox can't be BLANK!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        CheckBox checkbox = new CheckBox(this);
+
         checkbox.setText(value.getText().toString());
         checkbox.setId(View.generateViewId());
         checkboxcontainer.addView(checkbox);
         value.setText("");
 
-        //savecheckbox();
+
+
+        savecheckbox();
 
     }
 
-    private void deletecheckbox(View checkbox) {
-        checkboxcontainer.removeView(checkbox);
+    private void addcheckbox2(String intext) {
+        CheckBox checkbox = new CheckBox(this);
 
-        Toast.makeText(this, "DONE!", Toast.LENGTH_SHORT).show();
-    }
-
-//    private void savecheckbox() {
-//        JSONArray jsonArray = new JSONArray();
-//
-//        for (int i = 0; i < checkboxcontainer.getChildCount(); i++) {
-//            View child = checkboxcontainer.getChildAt(i);
-//            if (child instanceof CheckBox) {
-//                CheckBox checkBox = (CheckBox) child;
-//                // Save each CheckBox's text and checked state
-//                JSONArray checkBoxData = new JSONArray();
-//                checkBoxData.put(checkBox.getText().toString());
-//                checkBoxData.put(checkBox.isChecked());
-//                jsonArray.put(checkBoxData);
-//            }
+//        if (text != null) {
+//            checkbox.setText(text);
+//            checkboxcontainer.addView(checkbox);
 //        }
+
+//        if (TextUtils.isEmpty(intext.getText())) {
+//            Toast.makeText(this, "Checkbox can't be BLANK!", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+
+
+        checkbox.setText(intext);
+        checkbox.setId(View.generateViewId());
+        checkboxcontainer.addView(checkbox);
+//        value.setText("");
+
+
+        savecheckbox();
+
+    }
+
+//    private void deletecheckbox(View checkbox) {
+//        checkboxcontainer.removeView(checkbox);
 //
-//        sharedPreferences.edit().putString(KEY_CHECKBOXES, jsonArray.toString()).apply();
+//        Toast.makeText(this, "DONE!", Toast.LENGTH_SHORT).show();
 //    }
 
-//    private void loadCheckBox() {
-//        String savedData = sharedPreferences.getString(KEY_CHECKBOXES, null);
-//
+    private void savecheckbox() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (int i = 0; i < checkboxcontainer.getChildCount(); i++) {
+            View child = checkboxcontainer.getChildAt(i);
+            if (child instanceof CheckBox) {
+                CheckBox checkBox = (CheckBox) child;
+                // Save each CheckBox's text and checked state
+                JSONArray checkBoxData = new JSONArray();
+                checkBoxData.put(checkBox.getText().toString());
+                checkBoxData.put(checkBox.isChecked());
+                jsonArray.put(checkBoxData);
+
+            }
+        }
+
+        sharedPreferences.edit().putString(KEY_CHECKBOXES, jsonArray.toString()).apply();
+    }
+
+    private void loadCheckBox() throws JSONException {
+        String savedData = sharedPreferences.getString(KEY_CHECKBOXES, null);
+
 //        if (savedData != null) {
 //            try {
 //                JSONArray jsonArray = new JSONArray(savedData);
@@ -154,7 +192,30 @@ public class checklist2 extends AppCompatActivity {
 //                e.printStackTrace();
 //            }
 //        }
-//    }
+
+        if (savedData == null) {
+            Log.d("SavedData", "No data saved in SharedPreferences");
+            return; // Exit if there's no data
+        } else {
+            Log.d("SavedData", "Retrieved JSON: " + savedData);
+        }
+
+        JSONArray jsonArray = new JSONArray(savedData);
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            // Extract each CheckBox data
+            JSONArray checkBoxData = jsonArray.optJSONArray(i); // Safe access to array
+            if (checkBoxData != null && checkBoxData.length() == 2) {
+                String text = checkBoxData.optString(0, ""); // Default empty text if missing
+                boolean isChecked = checkBoxData.optBoolean(1, false); // Default unchecked
+
+                // Add the CheckBox to the layout
+                addcheckbox2(text);
+            } else {
+                Log.e("LoadCheckBoxes", "Invalid CheckBox data at index " + i);
+            }
+        }
+    }
 
     public void BackButton3(View view) {
         onBackPressed();
