@@ -28,6 +28,14 @@ class FirstTimeUserHome : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun tochecklist2(view: View?) {
+        val intent = Intent(
+            this@FirstTimeUserHome,
+            checklist2::class.java
+        )
+        startActivity(intent)
+    }
+
     fun toLogOut(view: View) {
         val user = UserAuth()
         user.logOutHere()
