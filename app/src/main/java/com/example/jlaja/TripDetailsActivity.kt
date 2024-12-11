@@ -150,4 +150,20 @@ class TripDetailsActivity : AppCompatActivity() {
     fun BackButton(view: View?) {
         onBackPressed()
     }
+
+    fun toChat(view: View) {
+        val intent = Intent(
+            this@TripDetailsActivity,
+            ChatRoom::class.java
+        )
+        startActivity(intent)
+    }
+
+    fun tochecklist2(view: View?) {
+        val intent = Intent(
+            this@TripDetailsActivity,
+            checklist2::class.java
+        )
+        startActivity(intent)
+    }
 }

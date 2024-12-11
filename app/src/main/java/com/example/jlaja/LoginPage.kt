@@ -31,7 +31,7 @@ class LoginPage : AppCompatActivity() {
     fun toSecondTimeUserHome(view: View?) {
         val intent = Intent(
             this@LoginPage,
-            SecondTimeUserHome::class.java
+            FirstTimeUserHome::class.java
         )
         startActivity(intent)
     }

@@ -343,34 +343,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/checklist"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Task"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp">
-
-                    <LinearLayout
-                        android:id="@+id/checkboxcontainersecond"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" />
-
-                </ScrollView>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -390,7 +363,7 @@
                     android:id="@+id/NoTrips"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
+                    android:paddingTop="5dp"
                     app:srcCompat="@drawable/no_trips" />
 
                 <TextView
@@ -440,13 +413,23 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/navJlaja"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
                         android:background="#00FFFFFF"
-                        app:srcCompat="@drawable/nav_jlaja" />
+                        app:srcCompat="@drawable/jl_icon" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_height="wrap_content"
+                        android:text="Jlaja" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -454,6 +437,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="toChat"
                 android:layout_weight="1">
 
                 <LinearLayout
@@ -461,13 +445,24 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/navActive"
-                        android:layout_width="wrap_content"
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
                         android:background="#00FFFFFF"
-                        app:srcCompat="@drawable/nav_active" />
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/baseline_chat_24" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:text="Chat" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -475,6 +470,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="toSplitBillMain"
                 android:layout_weight="1">
 
                 <LinearLayout
@@ -482,42 +478,63 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/navAdd"
-                        android:onClick="toSplitBillMain"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
                         android:layout_gravity="center"
                         android:background="#00FFFFFF"
-                        app:srcCompat="@drawable/nav" />
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/add" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="Add Trip" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="tochecklist2"
                 android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="68dp"
                     android:orientation="vertical">
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/navTask"
-                        android:onClick="tochecklist2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:background="#00FFFFFF"
-                        android:onClick="toChat"
-                        app:srcCompat="@drawable/nav_task" />
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/task" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:text="Tasks" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="toProfile"
                 android:layout_weight="1">
 
                 <LinearLayout
@@ -525,14 +542,24 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/imageButton4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:background="#00FFFFFF"
-                        android:onClick="toProfile"
-                        app:srcCompat="@drawable/nav_profile" />
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:padding="2dp"
+                        app:srcCompat="@drawable/profile" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:text="Profile" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>

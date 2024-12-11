@@ -5,10 +5,9 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.CheckBox
 import android.widget.LinearLayout
-
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,7 +17,6 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import org.json.JSONArray
 import org.json.JSONException
-import android.widget.CheckBox
 
 class FirstTimeUserHome : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -49,7 +47,6 @@ class FirstTimeUserHome : AppCompatActivity() {
         }
 
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
-        checkboxcontainersecond = findViewById(R.id.checkboxcontainersecond)
 
 
         //load previous Checkbox
@@ -64,10 +61,6 @@ class FirstTimeUserHome : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun toLogOut(view: View) {
-        val user = UserAuth()
-        user.logOutHere()
-    }
 
     fun tochecklist2(view: View?) {
         val intent = Intent(

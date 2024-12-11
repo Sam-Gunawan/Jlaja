@@ -61,6 +61,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:onClick="toChat"
         android:id="@+id/PressToGroupChat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -124,55 +125,131 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="5dp"
-                android:paddingTop="20dp">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/popularDestinationTitle"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
                     android:layout_weight="1"
-                    android:text="Trip Description"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/SeeAllPopularDestinations"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/popularDestinationTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Trip Description"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/SeeAllPopularDestinations"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="right|center_vertical"
+                            android:text="Edit Description"
+                            android:textColor="#006CD2"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner4"
+                        android:elevation="5dp"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/editTextTextMultiLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:inputType="textMultiLine" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="20dp"
                     android:layout_weight="1"
-                    android:gravity="right|center_vertical"
-                    android:text="Edit Description"
-                    android:textColor="#006CD2"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="tochecklist2"
+                        android:background="@drawable/rounded_corner6"
+                        android:elevation="5dp"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
 
-            <LinearLayout
-                android:id="@+id/linearLayout7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/rounded_corner4"
-                android:elevation="20dp"
-                android:orientation="vertical"
-                android:padding="10dp">
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="View Tasks"
+                            android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editTextTextMultiLine"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine" />
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/task" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="toChatViewModel"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rounded_corner6"
+                        android:elevation="5dp"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Text J-La"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/voicechat2" />
+                    </LinearLayout>
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -180,6 +257,7 @@
                 android:id="@+id/ChatBotButton"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
+                android:layout_weight="1"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/planetblur"
                 android:orientation="horizontal">
@@ -236,7 +314,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_margin="20dp"
                 android:elevation="5dp"
-                android:background="@drawable/rounded_corner2"
+                android:background="@drawable/rounded_corner6"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -244,7 +322,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/rounded_corner3"
                     android:orientation="horizontal"
-                    android:elevation="5dp"
+                    android:elevation="2dp"
                     android:padding="10dp">
 
                     <TextView

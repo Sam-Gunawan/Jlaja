@@ -54,9 +54,9 @@
 
     <ScrollView
         android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,16 +64,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/profile_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="5dp"
-                android:layout_gravity="center_horizontal"
                 android:background="@drawable/circular_bg"
                 android:backgroundTint="@color/my_primary"
                 android:scaleType="centerCrop"
@@ -81,9 +81,9 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_marginBottom="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
                 android:gravity="center_horizontal"
                 android:text="Edit picture" />
 
@@ -96,11 +96,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:elevation="5dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edit_text_rounded_corner"
-                android:orientation="vertical"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:orientation="vertical"
                 android:padding="10dp">
 
                 <TextView
@@ -118,30 +119,55 @@
                     android:padding="10dp" />
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/profile_phone"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edit_text_rounded_corner"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:elevation="5dp"
-                android:enabled="false"
-                android:hint="Phone"
-                android:inputType="text"
-                android:padding="10dp" />
+                android:background="@drawable/edit_text_rounded_corner"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number" />
+
+                <EditText
+                    android:id="@+id/profile_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="Phone"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/profle_update_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/btn_rounded_corner"
                 android:text="Update profile" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/logindivider1" />
 
             <TextView
                 android:id="@+id/logout_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="Logout" />
+                android:layout_gravity="left"
+                android:layout_marginTop="20dp"
+                android:text="Logout"
+                android:textColor="#046C04" />
         </LinearLayout>
     </ScrollView>
 

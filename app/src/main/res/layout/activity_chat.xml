@@ -8,9 +8,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@color/my_primary"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="15dp"
         android:id="@+id/toolbar">
 
         <TextView
@@ -40,6 +42,7 @@
             android:src="@drawable/icon_back"
             android:background="?attr/selectableItemBackgroundBorderless"
             app:tint="@color/white"
+            android:onClick="BackButton"
             android:layout_centerVertical="true"
             android:id="@+id/back_btn"/>
 
