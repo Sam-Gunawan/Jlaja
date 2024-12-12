@@ -17,14 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:elevation="15dp">
 
-        <ImageButton
-            android:id="@+id/BackToHomePageButton"
-            android:onClick="BackButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="#00FFFFFF"
-            android:padding="20dp"
-            app:srcCompat="@drawable/arrow_left" />
 
         <TextView
             android:id="@+id/TripDetails"
@@ -32,6 +24,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:layout_marginLeft="20dp"
             android:gravity="center_vertical"
             android:text="Add Bill  "
             android:textSize="20sp"

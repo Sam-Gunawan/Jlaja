@@ -235,7 +235,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingTop="5dp"
                                     android:paddingBottom="5dp"
-                                    android:text="lorem ipsum"
+                                    android:text="Vacation in Italy"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -244,7 +244,7 @@
                                     android:layout_height="36dp"
                                     android:paddingLeft="5dp"
                                     android:paddingRight="5dp"
-                                    android:text="Lorem ipsum odor amet, consectetuer adipiscing elit. Molestie purus nulla curabitur libero etiam duis." />
+                                    android:text="Visit monuments and churches and eat good food." />
 
                                 <ImageView
                                     android:id="@+id/addTrip3"
