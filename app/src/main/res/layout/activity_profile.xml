@@ -119,31 +119,31 @@
                     android:padding="10dp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:elevation="5dp"
-                android:background="@drawable/edit_text_rounded_corner"
-                android:orientation="vertical"
-                android:padding="10dp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:elevation="5dp"-->
+<!--                android:background="@drawable/edit_text_rounded_corner"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="10dp">-->
 
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phone Number" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textView20"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Phone Number" />-->
 
-                <EditText
-                    android:id="@+id/profile_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:hint="Phone"
-                    android:inputType="text"
-                    android:padding="10dp" />
-            </LinearLayout>
+<!--                <EditText-->
+<!--                    android:id="@+id/profile_phone"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:enabled="false"-->
+<!--                    android:hint="Phone"-->
+<!--                    android:inputType="text"-->
+<!--                    android:padding="10dp" />-->
+<!--            </LinearLayout>-->
 
             <Button
                 android:id="@+id/profle_update_btn"

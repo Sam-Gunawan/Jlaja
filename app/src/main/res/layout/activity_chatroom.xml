@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="#00FFFFFF"
-            android:onClick="BackButton3"
+            android:onClick="BackButton"
             android:padding="20dp"
             app:srcCompat="@drawable/arrow_left" />
 

@@ -120,14 +120,15 @@
         app:layout_constraintTop_toBottomOf="@id/box2" />
 
     <LinearLayout
+        android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -135,10 +136,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:onClick="toLoginPage"
-            android:layout_marginRight="10dp"
             android:text="Skip"
             android:textColor="#046C04" />
 
@@ -147,12 +148,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
             android:layout_marginLeft="10dp"
-            android:text="Next"
-            android:onClick="toSplashScreen2"
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner2"
-             />
+            android:onClick="toSplashScreen2"
+            android:text="Next" />
 
     </LinearLayout>
 

@@ -46,7 +46,7 @@ public class Profile extends AppCompatActivity  {
 
        profilePic = findViewById(R.id.profile_image_view);
        usernameInput = findViewById(R.id.profile_username);
-       phoneInput = findViewById(R.id.profile_phone);
+//       phoneInput = findViewById(R.id.profile_phone);
        updateProfileBtn = findViewById(R.id.profle_update_btn);
        progressBar = findViewById(R.id.profile_progress_bar);
        logoutBtn = findViewById(R.id.logout_btn);
@@ -94,6 +94,8 @@ public class Profile extends AppCompatActivity  {
                        return null;
                    }
                }));
+
+
    }
 
    void updateBtnClick() {
