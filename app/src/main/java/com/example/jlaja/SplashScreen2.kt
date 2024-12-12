@@ -25,5 +25,11 @@ class SplashScreen2 : AppCompatActivity() {
             UserAuth::class.java
         )
         startActivity(intent)
+    }fun toLoginPage(view: View?) {
+        val intent = Intent(
+            this@SplashScreen2,
+            UserAuth::class.java
+        )
+        startActivity(intent)
     }
 }

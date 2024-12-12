@@ -150,7 +150,7 @@
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:text="Next"
-            android:onClick="toUserAuth"
+            android:onClick="toLoginPage"
             android:background="@drawable/rounded_corner2"
             />
 

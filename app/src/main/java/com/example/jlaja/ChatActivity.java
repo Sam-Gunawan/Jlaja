@@ -78,7 +78,7 @@ public class ChatActivity extends AppCompatActivity {
                 });
 
         backBtn.setOnClickListener((v)->{
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
         });
         otherUsername.setText(otherUser.getUsername());
 
